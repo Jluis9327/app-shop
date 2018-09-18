@@ -20,3 +20,8 @@ Route::get('/prueba', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin/products','ProductController@index');//listado de productos //influir pr el servidor que sea post
+Route::get('/admin/products/create','ProductController@create');//crear nuevos productos vista de frmulario  // ver datos que sean get
+Route::post('/admin/products','ProductController@store');//registra los datos
+Route::get('/admin/products/{id}/edit','ProductController@edit');//formulario de edicion
+Route::post('/admin/products/{id}/edit','ProductController@update');//actualizar

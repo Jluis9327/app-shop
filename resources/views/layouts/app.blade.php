@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" href="{{asset('img/favicon.png')}}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>
-        Material Kit by Creative Tim
+        @yield('title')
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
           name='viewport'/>
@@ -15,9 +15,10 @@
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
-    <link href="{{asset('css/material-kit.css?v=2.0.4')}}" rel="stylesheet"/>
+    <link href="{{asset('css/material-kit.min.css')}}" rel="stylesheet"/>
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('css/demo.css')}}" rel="stylesheet"/>
+
 </head>
 <body class="@yield('body-class')">
 <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100"
