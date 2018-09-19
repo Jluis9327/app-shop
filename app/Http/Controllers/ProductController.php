@@ -45,4 +45,11 @@ class ProductController extends Controller
         $product->save();//Update es lo que realizara
         return redirect('/admin/products');
     }
+    public function destroy($id)
+    {
+        //dd($request->all());//dd permite imprimir lo que pasa el argumento y realiza la operacion
+        $product=Product::find($id);
+        $product->delete();//DELETE
+        return back();//un redireccionamiento a la pagina anterior
+    }
 }

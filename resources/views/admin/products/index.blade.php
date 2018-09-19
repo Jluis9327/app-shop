@@ -32,15 +32,21 @@
                                 <td>{{$product->category? $product->category->name: 'General'}}</td><!- ? se usa para saber si tiene elementos si no lo tiene mediante ":"imprime general->
                                 <td class="text-right col-md-5">&euro; {{$product->price}}</td>
                                 <td class="td-actions text-right ">
-                                    <button type="button" rel="tooltip" class="btn btn-info btn-link btn-just-icon btn-sm" data-original-title="" title="">
-                                        <i class="material-icons">person</i>
-                                        <div class="ripple-container"></div></button>
-                                    <a href="{{url('/admin/products/'.$product->id.'/edit')}}"  rel="tooltip" class="btn btn-success btn-link btn-just-icon btn-sm" data-original-title="" title="Editar Producto">
-                                        <i class="material-icons">edit</i>
-                                        <div class="ripple-container"></div></a>
-                                    <button type="button" rel="tooltip" class="btn btn-danger btn-link btn-just-icon btn-sm" data-original-title="" title="">
-                                        <i class="material-icons">close</i>
-                                        <div class="ripple-container"></div></button>
+
+                                    <form method="post" action="{{url('/admin/products/'.$product->id)}}">
+                                        {{csrf_field()}}
+                                        {{method_field('DELETE')}}
+                                        <a href="#" rel="tooltip" class="btn btn-info btn-link btn-just-icon btn-sm" data-original-title="" title="">
+                                            <i class="material-icons">person</i>
+                                            <div class="ripple-container"></div></a>
+                                        <a href="{{url('/admin/products/'.$product->id.'/edit')}}"  rel="tooltip" class="btn btn-success btn-link btn-just-icon btn-sm" data-original-title="" title="Editar Producto">
+                                            <i class="material-icons">edit</i>
+                                            <div class="ripple-container"></div></a>
+                                        <button  type="submit" rel="tooltip" class="btn btn-danger btn-link btn-just-icon btn-sm" data-original-title="" title="Eliminar Producto">
+                                            <i class="material-icons">close</i>
+                                            <div class="ripple-container"></div></button>
+                                    </form>
+
                                 </td>
                             </tr>
                         @endforeach

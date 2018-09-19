@@ -20,8 +20,16 @@ Route::get('/prueba', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin/products','ProductController@index');//listado de productos //influir pr el servidor que sea post
-Route::get('/admin/products/create','ProductController@create');//crear nuevos productos vista de frmulario  // ver datos que sean get
-Route::post('/admin/products','ProductController@store');//registra los datos
-Route::get('/admin/products/{id}/edit','ProductController@edit');//formulario de edicion
-Route::post('/admin/products/{id}/edit','ProductController@update');//actualizar
+Route::middleware(['auth','admin'])->prefix('admin')->group(function () //elimina el prefijo admin de la ruta
+{
+    Route::get('/products','ProductController@index');//listado de productos //influir pr el servidor que sea post
+    Route::get('/products/create','ProductController@create');//crear nuevos productos vista de frmulario  // ver datos que sean get
+    Route::post('/products','ProductController@store');//registra los datos
+    Route::get('/products/{id}/edit','ProductController@edit');//formulario de edicion
+    Route::post('/products/{id}/edit','ProductController@update');//actualizar
+//Route::post('/admin/products/{id}/delete','ProductController@destroy');//las rutas get solo se usan para obtener informacion
+    Route::delete('/products/{id}','ProductController@destroy');
+});
+
+//metodos PATCH DELETE
+
