@@ -19,7 +19,7 @@
                             <th>Nombre</th>
                             <th>Descripción</th>
                             <th>Categoria</th>
-                            <th class="text-right">Precio</th>
+                            <th class="text-center">Precio</th>
                             <th class="text-right">Opciones</th>
                         </tr>
                         </thead>
@@ -42,6 +42,9 @@
                                         <a href="{{url('/admin/products/'.$product->id.'/edit')}}"  rel="tooltip" class="btn btn-success btn-link btn-just-icon btn-sm" data-original-title="" title="Editar Producto">
                                             <i class="material-icons">edit</i>
                                             <div class="ripple-container"></div></a>
+                                        <a href="{{url('/admin/products/'.$product->id.'/images')}}" rel="tooltip" class="btn btn-warning btn-link btn-just-icon btn-sm" data-original-title="" title="Imagenes del Producto">
+                                            <i class="material-icons">image</i>
+                                            <div class="ripple-container"></div></a>
                                         <button  type="submit" rel="tooltip" class="btn btn-danger btn-link btn-just-icon btn-sm" data-original-title="" title="Eliminar Producto">
                                             <i class="material-icons">close</i>
                                             <div class="ripple-container"></div></button>
@@ -61,39 +64,5 @@
 
     </div>
 </div>
-<footer class="footer footer-default">
-    <div class="container">
-        <nav class="float-left">
-            <ul>
-                <li>
-                    <a href="https://www.creative-tim.com">
-                        Creative Tim
-                    </a>
-                </li>
-                <li>
-                    <a href="https://creative-tim.com/presentation">
-                        About Us
-                    </a>
-                </li>
-                <li>
-                    <a href="http://blog.creative-tim.com">
-                        Blog
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.creative-tim.com/license">
-                        Licenses
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="copyright float-right">
-            &copy;
-            <script>
-                document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-        </div>
-    </div>
-</footer>
+
 @endsection

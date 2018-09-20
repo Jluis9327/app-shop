@@ -20,7 +20,8 @@ Route::get('/prueba', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::middleware(['auth','admin'])->prefix('admin')->group(function () //elimina el prefijo admin de la ruta
+Route::get('/products/{id}','ProductController@show');//formulario de edicion
+Route::middleware(['auth','admin'])->prefix('admin')->namespace('Admin')->group(function () //elimina el prefijo admin de la ruta
 {
     Route::get('/products','ProductController@index');//listado de productos //influir pr el servidor que sea post
     Route::get('/products/create','ProductController@create');//crear nuevos productos vista de frmulario  // ver datos que sean get
@@ -29,6 +30,12 @@ Route::middleware(['auth','admin'])->prefix('admin')->group(function () //elimin
     Route::post('/products/{id}/edit','ProductController@update');//actualizar
 //Route::post('/admin/products/{id}/delete','ProductController@destroy');//las rutas get solo se usan para obtener informacion
     Route::delete('/products/{id}','ProductController@destroy');
+
+
+    Route::get('/products/{id}/images','ImageController@index');//listar
+    Route::post('/products/{id}/images','ImageController@store');//registrar
+    Route::delete('/products/{id}/images','ImageController@destroy');//form eleliminar
+    Route::get('/products/{id}/images/{image}','ImageController@select');//destancar
 });
 
 //metodos PATCH DELETE
