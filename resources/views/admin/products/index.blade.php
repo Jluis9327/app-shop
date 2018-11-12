@@ -3,7 +3,6 @@
 @section('body-class',"profile-page")
 @section('content')
 <div class="page-header header-filter" data-parallax="true" style="background-image: url('{{asset('img/profile_city.jpg')}}')">
-
 </div>
 <div class="main main-raised">
     <div class="container">
@@ -55,9 +54,9 @@
                         @endforeach
                         </tbody>
                     </table>
-
+                    <div class="pagination-area " >
                     {{$products->links()}}
-
+                    </div>
                 </div>
             </div>
         </div>

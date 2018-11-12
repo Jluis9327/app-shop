@@ -11,6 +11,7 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
           name='viewport'/>
     <!--     Fonts and icons     -->
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
@@ -18,6 +19,7 @@
     <link href="{{asset('css/material-kit.min.css')}}" rel="stylesheet"/>
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('css/demo.css')}}" rel="stylesheet"/>
+    @yield('styles');
 
 </head>
 <body class="@yield('body-class')">
@@ -69,27 +71,6 @@
                     </li>
             @endguest
 
-            <!--li class="nav-item">
-<a class="nav-link" rel="tooltip" title="" data-placement="bottom"
-href="https://twitter.com/CreativeTim" target="_blank"
-data-original-title="Follow us on Twitter">
-<i class="fa fa-twitter"></i>
-</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" rel="tooltip" title="" data-placement="bottom"
-href="https://www.facebook.com/CreativeTim" target="_blank"
-data-original-title="Like us on Facebook">
-<i class="fa fa-facebook-square"></i>
-</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" rel="tooltip" title="" data-placement="bottom"
-href="https://www.instagram.com/CreativeTimOfficial" target="_blank"
-data-original-title="Follow us on Instagram">
-<i class="fa fa-instagram"></i>
-</a>
-</li-->
             </ul>
         </div>
     </div>

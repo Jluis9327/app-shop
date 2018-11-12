@@ -1,6 +1,21 @@
 @extends('layouts.app')
 @section('title',"Bienvenidos a App Shop")
 @section('body-class',"landing-page sidebar-collapse")
+@section('styles')
+    <style>
+        .row{
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .row>[class*='col-']{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+@stop
 @section('content')
 <div class="page-header header-filter" data-parallax="true" style="background-image: url('{{asset('img/profile_city.jpg')}}')">
     <div class="container">
@@ -84,8 +99,8 @@
                     </div>
                     @endforeach
                 </div>
-                <div class="pagination-area">
-                    {{$products->links()}}
+                <div class="pagination-area" id="pagi">
+                    {!!$products->links('') !!}
                 </div>
             </div>
         </div>
@@ -126,5 +141,4 @@
         </div>
     </div>
 </div>
-
 @endsection
